@@ -21,7 +21,7 @@ int main (int argc, const char *argv[]) {
 
         /* Read Temp */
         FILE *fp;
-        fp = fopen("/tmp/digitemp", "r");
+        fp = fopen("digitemp", "r");
         char tempText[100];
         fgets(tempText, 100, fp);
         fclose(fp);
