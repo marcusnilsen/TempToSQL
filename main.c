@@ -5,8 +5,15 @@
  * Install to crontab together with:
  * * * * * * /usr/sbin/digitemp_DS9097 -aq -c /etc/digitemp.conf > /tmp/digitemp
  *
- * 13 july 2011 Versjon 1.1:
+ * Version history before GIT:
+ * 
+ * 24 July 2011 Version v1.3: bugfix
+ * 13 july 2011 Version v1.2:
  * - Made a check to see if the file is empty or not (empty file causing the DB to register 0*C temp if the temp check failed (and made a blank file))
+ * 9 July 2011 Version v1.1: bugfix, added quick fix for a 85*C bug in the sensor (??)
+ * 6 June 2011 Version v1.0: Finished first version, and started to use it live.
+ *
+ * tempToSQL - @marcusnilsen (.com)
  */
 
 #include <unistd.h>

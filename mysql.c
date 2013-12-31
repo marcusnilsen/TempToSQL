@@ -1,3 +1,9 @@
+/* 
+ * mysql / db code
+ *
+ * tempToSQL - @marcusnilsen (.com)
+ */
+
 #include </usr/local/include/mysql/mysql.h>
 
 #include <string.h>
