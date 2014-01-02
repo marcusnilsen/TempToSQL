@@ -16,12 +16,15 @@ int mysqlInit () {
     /* init db connection */
     conn = mysql_init(NULL);
     
+    /* Change this before compiling: */
     char *server = "10.1.1.10";
     char *user = "sqlUserName";
     char *password = "sqlPassword";
     char *database = "sqlDB";
-    
-    int port = 5333;
+ 
+    int port = 53;
+
+
     int COMPRESS = 1;
     
     if (COMPRESS == 1) {
