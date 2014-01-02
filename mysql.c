@@ -47,6 +47,7 @@ int mysqlInsert (int sensor, char *temp) {
     sprintf(query, "INSERT INTO temperatures (sensor_id,temperature) VALUES (\"%d\",\"%s\")", sensor, temp);
     
     /* send SQL query */
+    /* printf("QUERY: %s\n", query); */
     if (mysql_query(conn, query)) {
         fprintf(stderr, "%s\n", mysql_error(conn));
     }

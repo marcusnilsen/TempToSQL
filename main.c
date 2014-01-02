@@ -22,18 +22,18 @@
 #include "mysql.h"
 
 #define TEMPBUFFER 2000
-#define PATHTOTEMPFILE digitemp
+#define PATHTOTEMPFILE "/tmp/digitemp"
 
 int main (int argc, const char *argv[]) {
     sleep(15); // Wait for digitemp to close the file
     
     /* init db */
-    if (!mysqlInit()) {
+    if (mysqlInit()) {
         printf("Problem connecting to db ...\n");
         return 0;
     }
     
-    int i,sensorId = 0;
+    int sensorId = 0;
     char errortemp[2] = "85";
     char tempText[TEMPBUFFER];
     char *temp;
@@ -43,9 +43,10 @@ int main (int argc, const char *argv[]) {
     fp = fopen(PATHTOTEMPFILE, "r");
 
     while (fgets (tempText, TEMPBUFFER, fp) != NULL) {
-
+	int i = 0;
+	
         /* READ DATA FROM EVERY SENSOR AND PARSE IT */
-        printf("Reading data from sensors ...\n");
+        /*printf("Reading data from sensors ...\n");*/
         
 	/* Sensor ID to be saved to db, start with sensor 1 */
 	sensorId++;
@@ -69,9 +70,10 @@ int main (int argc, const char *argv[]) {
             mysqlQuit();
             return 0;
         }
-        
+/*        
         printf("Temp is: %s\n", temp);
-        
+	printf("Sensor is: %i\n", sensorId);
+*/        
         /* Send to mysql_query function, (SENSORID, TEMP) */
         mysqlInsert(sensorId, temp);
 
