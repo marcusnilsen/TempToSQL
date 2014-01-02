@@ -13,7 +13,13 @@
  * 9 July 2011 Version v1.1: bugfix, added quick fix for a 85*C bug in the sensor (??)
  * 6 June 2011 Version v1.0: First version finished. Started to use it live.
  *
- * tempToSQL - @marcusnilsen (.com)
+ * /tmp/digitemp example file:
+ *
+ *     Dec 29 15:10:01 Sensor 0 C: 3.06 F: 37.51
+ *     Dec 29 15:10:02 Sensor 1 C: 11.20 F: 80.51
+ *
+ *
+ * tempToSQL - @marcusnilsen (.com / twitter / github / mail: post@ )
  */
 
 #include <unistd.h>
