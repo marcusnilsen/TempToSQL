@@ -14,7 +14,7 @@
 	*/5 * * * * /usr/sbin/digitemp_DS9097 -aq -c /etc/digitemp.conf > /tmp/digitemp
 
 	* This assumes you have set up digitemp to save the config to /etc/digitemp.conf:
-	* /usr/sbin/digitemp_DS9097 -i -s /dev/cuau1 -q -c /etc/digitemp2.conf
+	* /usr/sbin/digitemp_DS9097 -i -s /dev/cuau1 -q -c /etc/digitemp.conf
 
 5. Run the file you compiled in crontab, execute at the same time as above:
 
